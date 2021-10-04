@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="container2 col-12 md-col-6 lg-col-3">
+        <h1 id="header">!READ THE NEWS!</h1>
+    </div>
+    <div class="container1 col-12 md-col-6 lg-col-3">
+        <input type="text" style="margin: 20px;" placeholder="Google, facebook, Mexico,..." id="inputSearch">
+        <div class="grid" id="grid">
+            <p></p>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="assets/scripts/main.js" type="module"></script>
+
+    <script id="header-source" type="text/x-handlebars">
+        <h1>{{title}}</h1>
+    </script>
+
+    <script id="grid-source" type="text/x-handlebars">
+        {{#each noticias}}
+            <div class="col-12 md-col-6 lg-col-3 ALIN">
+                <img src="{{urlToImage}}" />
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                <a href="{{url}}" target="_blank">Ver más</a>
+            </div>
+        {{/each}}
+    </script>
+</body>
+</html>
